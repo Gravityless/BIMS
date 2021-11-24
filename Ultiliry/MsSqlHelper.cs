@@ -5,9 +5,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace MsSqlHelper
+namespace MSH
 {
-    public class YFMsSqlHelper
+    public class MsSqlHelper
     {
         public static readonly string connectionString = ConfigurationManager.ConnectionStrings["BDMS"].ConnectionString;
 

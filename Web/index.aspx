@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="index.aspx.vb" Inherits="index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
 
 <!DOCTYPE html>
 
@@ -9,9 +9,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            test
-        </div>
+        <table>
+              <tr>
+                  <td>ID</td><td>账号</td><td>密码</td>
+              </tr>
+                   <%
+                       List<Model.User> list = BLL.User.list();
+                       %>
+                    <% for (int i= 0; i<list.Count; i++)   
+                      {%>
+                   <tr><td><%=list[i].Id %></td><td><%=list[i].Name %></td><td><%=list[i].Password %></td></tr>
+                   <%} %>
+
+            </table>
     </form>
 </body>
 </html>

@@ -9,12 +9,16 @@ namespace Model
     public class User
     {
         private int id;
+        public int Id { get => id; set => id = value; }
 
         private string name;
-
-        public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
 
+        private string password;
+        public string Password { get => password; set => password = value; }
+
+        private int status;
+        public int Status { get => status; set => status = value; }
 
     }
 }
