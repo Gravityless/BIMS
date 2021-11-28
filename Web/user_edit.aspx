@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="reg.aspx.cs" Inherits="reg" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="user_edit.aspx.cs" Inherits="user_edit" %>
 
 <!DOCTYPE html>
 
@@ -6,11 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 148px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -37,7 +32,8 @@
             </tr>
             <tr>
                 <td>&nbsp;</td><td class="auto-style1">
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="注 册" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="保 存" />
+                <asp:HiddenField ID="id" runat="server" />
                 </td>
             </tr>
         </table>
