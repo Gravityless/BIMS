@@ -1,54 +1,43 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
 
+<%@ Register src="inc/pageHead.ascx" tagname="pageHead" tagprefix="uc1" %>
+<%@ Register src="inc/pageTail.ascx" tagname="pageTail" tagprefix="uc2" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>泸州市建筑信息</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <table>
-              <tr>
-                  <td>账号</td><td>密码</td><td>权限</td><td>删除</td><td>更新</td>
-              </tr>
-                   <%
+        <div>
+            <uc1:pageHead ID="pageHead1" runat="server" />
+            
+            <div style="width:1000px; margin:0 auto">
+                <ul style="list-style:none; margin:0;padding:0;">
+                    <%
+                    List<Model.Feature> list = BLL.Feature.list();
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                    %>
 
-                       string id = Request.QueryString["id"];
+                    <li style="float:left; height:200px; width:238px; text-align:center; border:#DEDEDE solid 1px; margin:10px 10px 10px 0">
+                        <a href="detailView.aspx?fid=<%=list[i].Fid %>" target="_blank">
+                            <img src="/img/<%=list[i].Fimg %>" width="200"/>
+                            <br>
+                            <%=list[i].Title %> | <%=list[i].Tag %>
+                        </a>
 
-                       if (id != null)
-                       {
-                           BLL.User.del(int.Parse(id));
-                           JH.JsHelper.AlertAndRedirect("删除成功！", "index.aspx");
-                       }
+                    </li>
 
-                       List<Model.User> list = BLL.User.list();
-                       %>
-                    <% for (int i= 0; i<list.Count; i++)
-                        {
-                            string status = "";
-                            if (list[i].Status == 1)
-                            {
-                                status = "管理员";
-                            }
-                            else if(list[i].Status == 0)
-                            {
-                                status = "访客";
-                            }
-                            else
-                            {
-                                status = "禁用";
-                            }
+                    <%} %>
+                </ul>
+            </div>
 
-                            %>
-                   <tr>
-                       <td><%=list[i].Name %></td><td><%=list[i].Password %></td><td><%=status %></td>
-                       <td><a href="index.aspx?id=<%=list[i].Id %>">删除</a></td><td><a href="user_edit.aspx?id=<%=list[i].Id %>">更新</a></td>
-                   </tr>
-                   <%} %>
-
-            </table>
+            <uc2:pageTail ID="pageTail1" runat="server" />
+        </div>
     </form>
 </body>
 </html>

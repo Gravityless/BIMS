@@ -10,12 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        <table>
-            <tr>
-                <td>账号</td><td class="auto-style1">
-                <asp:TextBox ID="username" runat="server"></asp:TextBox>
-                </td>
-            </tr>
+        <table border="1" width="80%">
             <tr>
                 <td>密码</td><td class="auto-style1">
                 <asp:TextBox ID="password" runat="server"></asp:TextBox>
@@ -34,6 +29,7 @@
                 <td>&nbsp;</td><td class="auto-style1">
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="保 存" />
                 <asp:HiddenField ID="id" runat="server" />
+                <asp:HiddenField ID="username" runat="server" />
                 </td>
             </tr>
         </table>
