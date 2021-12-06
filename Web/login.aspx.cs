@@ -20,11 +20,12 @@ public partial class login : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-
+        Model.User user = BLL.User.GetUser(this.username.Text);
 
         if(BLL.User.login(this.username.Text, this.password.Text))
         {
-            JH.JsHelper.AlertAndRedirect("登录成功！", "index.aspx");
+            SH.SessionHelper.SetSession("user", user);
+            JH.JsHelper.AlertAndRedirect("登录成功！", "user/index.aspx");
         }
         else
         {
@@ -33,4 +34,9 @@ public partial class login : System.Web.UI.Page
     }
 
 
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        JH.JsHelper.Redirect("reg.aspx");
+    }
 }

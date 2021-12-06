@@ -17,7 +17,7 @@ namespace DAL
         public static bool add(Model.User user)
         {
             bool result = false;
-            int i = MSH.MsSqlHelper.ExecuteSql("insert into t_user (username, password, userstatus) values (" + user.Name + ", " + user.Password + ", " + user.Status + ")");
+            int i = MSH.MsSqlHelper.ExecuteSql("insert into t_user (username, password, userstatus) values ('" + user.Name + "', '" + user.Password + "', " + user.Status + ")");
 
             if (i > 0)
                 result = true;
@@ -72,7 +72,7 @@ namespace DAL
         {
             bool result = false;
 
-            string strsql = "select * from t_user where username=" + username + " and password=" + password + "";
+            string strsql = "select * from t_user where username='" + username + "' and password=" + password + "";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             
 
@@ -96,7 +96,7 @@ namespace DAL
         {
             bool result = false;
 
-            string strsql = "select * from t_user where username=" + username + "";
+            string strsql = "select * from t_user where username='" + username + "'";
             DataTable dataTable = MSH.MsSqlHelper.Query(strsql).Tables[0];
 
             if (dataTable.Rows.Count == 0)
@@ -119,7 +119,11 @@ namespace DAL
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             return Dttolist(dt);
         }
-
+        /// <summary>
+        /// 将datatable转换成list
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static List<Model.User> Dttolist(DataTable dt)
         {
             List<Model.User> list = new List<Model.User>();
@@ -160,12 +164,16 @@ namespace DAL
 
             return user;
         }
-
+        /// <summary>
+        /// 根据用户名取出用户
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public static Model.User GetUser(string username)
         {
             Model.User user = new Model.User();
 
-            string strsql = "select * from t_user where userid='" + username + "'";
+            string strsql = "select * from t_user where username='" + username + "'";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
 
             if (dt.Rows.Count != 0)

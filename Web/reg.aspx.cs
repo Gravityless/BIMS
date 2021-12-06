@@ -27,7 +27,12 @@ public partial class reg : System.Web.UI.Page
 
         if (BLL.User.add(user))
         {
-            JH.JsHelper.AlertAndRedirect("注册成功！", "index.aspx");
+            JH.JsHelper.AlertAndRedirect("注册成功！", "login.aspx");
         }
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        JH.JsHelper.Redirect("login.aspx");
     }
 }

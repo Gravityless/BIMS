@@ -17,10 +17,10 @@
                 <tr><td>类型：</td><td>
                     <asp:TextBox ID="tag" runat="server"></asp:TextBox>
                     </td></tr>
-                <tr><td>X坐标：</td><td>
+                <tr><td>经度：</td><td>
                     <asp:TextBox ID="locx" runat="server"></asp:TextBox>
                     </td></tr>
-                <tr><td>Y坐标：</td><td>
+                <tr><td>纬度：</td><td>
                     <asp:TextBox ID="locy" runat="server"></asp:TextBox>
                     </td></tr>
                 <tr><td>图片：</td><td>
