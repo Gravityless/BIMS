@@ -12,6 +12,10 @@ public partial class user_index : System.Web.UI.Page
         Model.User user = new Model.User();
 
         user = (Model.User)SH.SessionHelper.GetSession("user");
-        this.username.Text = user.Name;
+
+        if (user != null)
+            this.username.Text = user.Name;
+        else
+            JH.JsHelper.AlertAndRedirect("尚未登录！", "/login.aspx");
     }
 }

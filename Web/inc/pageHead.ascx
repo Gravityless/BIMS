@@ -5,5 +5,5 @@
 </table>
 
 <table width="1000" align="center" style="background:#DEDEDE">
-    <tr align="center"><td>类型列表</td><td>GIS查询</td><td><a href="/login.aspx">用户中心</a></td><td><a href="/admin/main.aspx" target="_blank">后台管理</a></td></tr>
+    <tr align="center"><td><a href ="/index.aspx" target="_blank">类型列表</a></td><td>GIS查询</td><td><a href="/user/index.aspx">用户中心</a></td><td><a href="/admin/main.aspx" target="_blank">后台管理</a></td></tr>
 </table>
