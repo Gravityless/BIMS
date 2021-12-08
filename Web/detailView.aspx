@@ -21,7 +21,7 @@
         <div>
             <uc1:pageHead ID="pageHead1" runat="server" />
             <table width="1000" align="center" border="0">
-                <tr><td rowspan="5" style="width:300px;">
+                <tr><td rowspan="4" style="width:300px;">
                     <asp:Image ID="img" runat="server" />
                     <td class="auto-style2">名称:<asp:Label ID="title" runat="server" Text="Label"></asp:Label>
                     </td></td></tr>
@@ -31,10 +31,14 @@
                     </td></tr>
                 <tr><td class="auto-style2">查询:<asp:Label ID="action" runat="server" Text="Label"></asp:Label>
                     </td></tr>
-                <tr><td class="auto-style2"><a href="/user/reporting.aspx?fid=<%=Request.QueryString["fid"] %>&feedBack=<%=this.feedBack.Text %>">反馈:</a>
-                    <asp:TextBox ID="feedBack" runat="server">有什么想反馈的？</asp:TextBox>
-                    </td></tr>
                 <tr><td colspan="2">详情:<asp:Label ID="detail" runat="server" Text="Label"></asp:Label>
+                    </td></tr>
+            </table>
+            <table width="1000" align="center" border="0">
+                <tr><td><a href="/user/reporting.aspx?fid=<%=Request.QueryString["fid"] %>&feedBack=<%=this.feedBack.Text %>">反馈</a>
+                    </td></tr>
+                <tr><td align="top">
+                    <asp:TextBox ID="feedBack" runat="server" Height="150px" Width="990px" TextMode="MultiLine">有什么想反馈的？</asp:TextBox>
                     </td></tr>
             </table>
             <uc2:pageTail ID="pageTail1" runat="server" />

@@ -28,5 +28,10 @@ namespace BLL
         {
             return DAL.Report.GetReport(uid);
         }
+
+        public static bool update(int rid)
+        {
+            return DAL.Report.update(rid);
+        }
     }
 }

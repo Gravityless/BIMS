@@ -14,6 +14,7 @@
                 <tr align="center"><td><a href="user.aspx" target="view">用户管理</a></td></tr>
                 <tr align="center"><td><a href="feature.aspx" target="view">要素管理</a></td></tr>
                 <tr align="center"><td><a href="f_add.aspx" target="view">新增要素</a></td></tr>
+                <tr align="center"><td><a href="report.aspx" target="view">反馈信息</a></td></tr>
             </table>
         </div>
     </form>

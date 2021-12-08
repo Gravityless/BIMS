@@ -25,5 +25,15 @@ namespace BLL
         {
             return DAL.Feature.GetFeature(fid);
         }
+
+        public static bool update(Model.Feature feature)
+        {
+            return DAL.Feature.update(feature);
+        }
+
+        public static bool del(int fid)
+        {
+            return DAL.Feature.del(fid);
+        }
     }
 }

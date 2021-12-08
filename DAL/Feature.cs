@@ -64,5 +64,34 @@ namespace DAL
 
             return list[0];
         }
+
+        public static bool update(Model.Feature feature)
+        {
+            bool result = false;
+
+            string strsql = "update t_feature set title='" + feature.Title + "',tag='" + feature.Tag + "',locx=" + feature.Locx + " , locy=" + feature.Locy + ", detail='" + feature.Detail + "',fimg='" + feature.Fimg + "' where fid=" + feature.Fid + "";
+            int i = MsSqlHelper.ExecuteSql(strsql);
+
+            if (i > 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+        public static bool del(int fid)
+        {
+            bool result = false;
+            string strsql = "delete from t_feature where fid=" + fid + "";
+
+            int i = MSH.MsSqlHelper.ExecuteSql(strsql);
+            if (i > 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }
     }
 }

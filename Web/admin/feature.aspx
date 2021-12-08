@@ -14,13 +14,21 @@
                 <tr><td><span style="display: inline-block; width: 40px;">编号</span></td><td><span style="display: inline-block; width: 100px;">名称</span></td><td><span style="display: inline-block; width: 50px;">类型</span></td><td>位置</td><td>图片</td><td>详细</td><td><span style="display: inline-block; width: 70px;">操作</span></td></tr>
 
                 <%
+                    string fid = Request.QueryString["fid"];
+                    if (fid != null)
+                    {
+                        BLL.Feature.del(int.Parse(fid));
+                        JH.JsHelper.AlertAndRedirect("删除成功！", "feature.aspx");
+                    }
+
+
                     List<Model.Feature> list = BLL.Feature.list();
 
                     for (int i = 0; i < list.Count; i++)
                     {
                     %>
 
-                <tr><td><%=i+1 %></td><td><%=list[i].Title %></td><td><%=list[i].Tag %></td><td><%=list[i].Locx+","+list[i].Locy %></td><td><img src="/img/<%=list[i].Fimg %>" width="200"/></td><td><%=list[i].Detail %></td><td>更新 删除</td></tr>
+                <tr><td><%=i+1 %></td><td><%=list[i].Title %></td><td><%=list[i].Tag %></td><td><%=list[i].Locx+","+list[i].Locy %></td><td><img src="/img/<%=list[i].Fimg %>" width="200"/></td><td><%=list[i].Detail %></td><td><a href="f_edit.aspx?fid=<%=list[i].Fid %>">更新</a> <a href="feature.aspx?fid=<%=list[i].Fid %>">删除</a></td></tr>
 
                 <%} %>
             </table>

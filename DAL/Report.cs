@@ -77,5 +77,21 @@ namespace DAL
 
             return list;
         }
+
+        public static bool update(int rid)
+        {
+            bool result = false;
+
+            string strsql = "update t_report set status=1 where rid="+rid+"";
+            int i = MSH.MsSqlHelper.ExecuteSql(strsql);
+
+            if (i > 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
     }
 }

@@ -12,7 +12,7 @@
         <div>
             <table border="1" width="80%">
               <tr>
-                  <td>用户名</td><td>密码</td><td>权限</td><td>删除</td><td>更新</td>
+                  <td>用户名</td><td>密码</td><td>权限</td><td>操作</td>
               </tr>
                    <%
 
@@ -45,7 +45,7 @@
                             %>
                    <tr>
                        <td><%=list[i].Name %></td><td><%=list[i].Password %></td><td><%=status %></td>
-                       <td><a href="user.aspx?id=<%=list[i].Id %>">删除</a></td><td><a href="user_edit.aspx?id=<%=list[i].Id %>">更新</a></td>
+                       <td><a href="user_edit.aspx?id=<%=list[i].Id %>">更新</a> <a href="user.aspx?id=<%=list[i].Id %>">删除</a></td>
                    </tr>
                    <%} %>
 

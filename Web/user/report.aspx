@@ -24,14 +24,16 @@
                 </td><td align="center">
                 
                     <table width="100%" align="center" border="1">
-                        <tr><td>要素名</td><td>反馈内容</td><td>反馈时间</td><td>反馈状态</td></tr>
+                        <tr align="center"><td>要素名</td><td>图片</td><td>反馈内容</td><td>反馈时间</td><td>反馈状态</td></tr>
                         <%  int uid = ((Model.User)SH.SessionHelper.GetSession("user")).Id;
                             List<Model.Report> list = BLL.Report.GetReport(uid);                        
                             for (int i = 0; i < list.Count; i++)
                             {
-                                string featureName = BLL.Feature.GetFeature(list[i].Fid).Title;
+                                Model.Feature feature = BLL.Feature.GetFeature(list[i].Fid);
+                                string featureName = feature.Title;
+                                string imgPath = feature.Fimg;
                                 %>                        
-                        <tr><td><%=featureName %></td><td><%=list[i].FeedBack %></td><td><%=list[i].Addate %></td><td><%=list[i].Status %></td></tr>
+                        <tr align="center"><td><%=featureName %></td><td><img src="/img/<%=imgPath %>" width="50" /></td><td><%=list[i].FeedBack %></td><td><%=list[i].Addate %></td><td><%=list[i].Status %></td></tr>
                             <%} %>
                     </table>
                     
