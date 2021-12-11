@@ -18,4 +18,19 @@ public partial class detailView : System.Web.UI.Page
         this.img.ImageUrl = "img/" + feature.Fimg.Trim();
         this.img.Width = 280;
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        JH.JsHelper.Redirect("/s_result.aspx?mode=2&tag=" + this.tag.Text + "");
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        JH.JsHelper.Redirect("/s_result.aspx?mode=3&title=" + this.title.Text + "&dist=" + this.dist.Text + "");
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        JH.JsHelper.Redirect("/s_result.aspx?mode=4&title=" + this.title.Text + "&dist=" + this.dist.Text + "&tag=" + this.searchTag.Text + "");
+    }
 }

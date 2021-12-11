@@ -28,7 +28,7 @@
                     <asp:TextBox ID="username" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
                     </td></tr>
                 <tr><td>密码</td><td>
-                    <asp:TextBox ID="password" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="password" runat="server" OnTextChanged="password_TextChanged" TextMode="Password"></asp:TextBox>
                     </td></tr>
                 <tr><td>&nbsp;</td><td>
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登 录" />

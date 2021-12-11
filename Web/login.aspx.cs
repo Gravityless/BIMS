@@ -39,4 +39,9 @@ public partial class login : System.Web.UI.Page
     {
         JH.JsHelper.Redirect("reg.aspx");
     }
+
+    protected void password_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }

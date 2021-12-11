@@ -35,5 +35,10 @@ namespace BLL
         {
             return DAL.Feature.del(fid);
         }
+
+        public static Model.Feature GetFeatureByName(string title)
+        {
+            return DAL.Feature.GetFeatureByName(title);
+        }
     }
 }

@@ -93,5 +93,21 @@ namespace DAL
 
             return result;
         }
+
+        public static Model.Feature GetFeatureByName(string title)
+        {
+            Model.Feature feature = new Model.Feature();
+
+            string strsql = "select * from t_feature where title='" + title + "'";
+            DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
+
+            if (dt.Rows.Count != 0)
+            {
+                feature.Locx = float.Parse(dt.Rows[0]["locx"].ToString());
+                feature.Locy = float.Parse(dt.Rows[0]["locy"].ToString());
+            }
+
+            return feature;
+        }
     }
 }

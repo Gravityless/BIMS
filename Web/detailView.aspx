@@ -29,7 +29,15 @@
                     </td></tr>
                 <tr><td class="auto-style2">位置:<asp:Label ID="location" runat="server" Text="Label"></asp:Label>
                     </td></tr>
-                <tr><td class="auto-style2">查询:<asp:Label ID="action" runat="server" Text="Label"></asp:Label>
+                <tr><td class="auto-style2">查询:<br />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="查看相同标签要素" Width="177px" />
+                    <br />
+                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="以此要素建立缓冲区" Width="177px" />
+                    &nbsp&nbsp 缓冲区(m)&nbsp;<asp:TextBox ID="dist" runat="server" Width="150px"></asp:TextBox>
+                    <br />
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="建立缓冲区(带标签)" Width="177px" />
+                    &nbsp;&nbsp; 指定标签&nbsp;&nbsp;&nbsp;<asp:TextBox ID="searchTag" runat="server" Width="150px">
+                    </asp:TextBox>
                     </td></tr>
                 <tr><td colspan="2">详情:<asp:Label ID="detail" runat="server" Text="Label"></asp:Label>
                     </td></tr>
