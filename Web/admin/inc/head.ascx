@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="pageHead.ascx.cs" Inherits="inc_pageHead" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="head.ascx.cs" Inherits="admin_inc_head" %>
 
 <table width="1000" align="center" style="background: #DEDEDE">
     <tr align="center">

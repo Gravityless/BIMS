@@ -3,7 +3,7 @@
 <%@ Register Src="~/inc/pageHead.ascx" TagPrefix="uc1" TagName="pageHead" %>
 <%@ Register Src="~/inc/pageTail.ascx" TagPrefix="uc1" TagName="pageTail" %>
 <%@ Register src="../inc/menu.ascx" tagname="menu" tagprefix="uc2" %>
-
+<%@ Register Src="~/inc/navBar.ascx" TagPrefix="uc1" TagName="navBar" %>
 
 
 <!DOCTYPE html>
@@ -11,10 +11,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <script src="/js/jQuery-3.6.0.js"></script>
+    <script src="/js/bootstrap.js"></script>
     <title></title>
     </head>
 <body>
     <form id="form1" runat="server">
+        <div style="width: 1000px; margin: 0 auto">
+                    <uc1:navBar ID="navBar1" runat="server" />
+                </div>
         <div>
             <uc1:pageHead runat="server" ID="pageHead" />
         </div>

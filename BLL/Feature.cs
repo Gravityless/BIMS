@@ -21,6 +21,11 @@ namespace BLL
             return DAL.Feature.list();
         }
 
+        public static List<Model.Feature> ListbyTag(string tag)
+        {
+            return DAL.Feature.ListbyTag(tag);
+        }
+
         public static Model.Feature GetFeature(int fid)
         {
             return DAL.Feature.GetFeature(fid);

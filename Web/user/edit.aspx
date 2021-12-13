@@ -4,11 +4,13 @@
 <%@ Register Src="~/inc/pageTail.ascx" TagPrefix="uc1" TagName="pageTail" %>
 <%@ Register src="../inc/menu.ascx" tagname="menu" tagprefix="uc2" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     <title></title>
 </head>
 <body>

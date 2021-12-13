@@ -55,6 +55,13 @@ namespace DAL
             return dotoList(dt);
         }
 
+        public static List<Model.Feature> ListbyTag(string tag)
+        {
+            string strsql = "select * from t_feature where tag='"+ tag +"'";
+            DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
+            return dotoList(dt);
+        }
+
         public static Model.Feature GetFeature(int fid)
         {
             string strsql = "select * from t_feature where fid=" + fid + "";
@@ -105,6 +112,7 @@ namespace DAL
             {
                 feature.Locx = float.Parse(dt.Rows[0]["locx"].ToString());
                 feature.Locy = float.Parse(dt.Rows[0]["locy"].ToString());
+                feature.Fid = int.Parse(dt.Rows[0]["fid"].ToString());
             }
 
             return feature;

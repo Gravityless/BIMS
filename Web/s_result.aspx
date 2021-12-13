@@ -1,25 +1,39 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="s_result.aspx.cs" Inherits="s_result" %>
 
-<%@ Register src="inc/pageHead.ascx" tagname="pageHead" tagprefix="uc1" %>
-<%@ Register src="inc/pageTail.ascx" tagname="pageTail" tagprefix="uc2" %>
+<%@ Register Src="inc/pageHead.ascx" TagName="pageHead" TagPrefix="uc1" %>
+<%@ Register Src="inc/pageTail.ascx" TagName="pageTail" TagPrefix="uc2" %>
+<%@ Register Src="~/inc/navBar.ascx" TagPrefix="uc1" TagName="navBar" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <script src="/js/jQuery-3.6.0.js"></script>
+    <script src="/js/bootstrap.js"></script>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-
-            <uc1:pageHead ID="pageHead1" runat="server" />
-
+        <div style="width: 1000px; margin: 0 auto">
+            <uc1:navBar ID="navBar1" runat="server" />
         </div>
         <div>
-            <table width="1000" align="center">
-                <tr><td><span style="display: inline-block; width: 40px;">编号</span></td><td><span style="display: inline-block; width: 100px;">名称</span></td><td><span style="display: inline-block; width: 50px;">类型</span></td><td>位置</td><td>图片</td><td>详细</td><td><span style="display: inline-block; width: 70px;">操作</span></td></tr>
+            <uc1:pageHead ID="pageHead1" runat="server" />
+        </div>
+        <div>
+            <table class="table" align="center" style="width: 1000px">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="width: 60px">编号</th>
+                        <th scope="col" style="width: 150px">名称</th>
+                        <th scope="col" style="width: 60px">类型</th>
+                        <th scope="col">位置</th>
+                        <th scope="col">图片</th>
+                        <th scope="col" style="width: 120px">操作</th>
+                    </tr>
+                </thead>
 
                 <%
                     string fid = Request.QueryString["fid"];
@@ -33,20 +47,28 @@
                     search.Mode = int.Parse(Request.QueryString["mode"]);
                     search.Title = Request.QueryString["title"];
                     search.Tag = Request.QueryString["tag"];
-                    if(Request.QueryString["locx"]!=null)
+                    if (Request.QueryString["locx"] != null)
                         search.Locx = float.Parse(Request.QueryString["locx"]);
-                    if(Request.QueryString["locy"]!=null)
+                    if (Request.QueryString["locy"] != null)
                         search.Locy = float.Parse(Request.QueryString["locy"]);
-                    if(Request.QueryString["dist"]!=null)
-                        search.Dist = float.Parse(Request.QueryString["dist"]);
+                    if (Request.QueryString["dist"] != null)
+                        search.Dist = float.Parse(Request.QueryString["dist"])/100;
 
                     List<Model.Feature> list = BLL.Search.search(search);
 
                     for (int i = 0; i < list.Count; i++)
                     {
-                    %>
+                %>
 
-                <tr><td><%=i+1 %></td><td><%=list[i].Title %></td><td><%=list[i].Tag %></td><td><%=list[i].Locx+","+list[i].Locy %></td><td><img src="/img/<%=list[i].Fimg %>" width="200"/></td><td><%=list[i].Detail %></td><td><a href="/detailView.aspx?fid=<%=list[i].Fid %>">查看</a></td></tr>
+                <tr>
+                    <td><%=i+1 %></td>
+                    <td><%=list[i].Title %></td>
+                    <td><%=list[i].Tag %></td>
+                    <td><%=list[i].Locx+","+list[i].Locy %></td>
+                    <td>
+                        <img src="/img/<%=list[i].Fimg %>" width="200" /></td>
+                    <td><a href="/detailView.aspx?fid=<%=list[i].Fid %>">查看</a></td>
+                </tr>
 
                 <%} %>
             </table>

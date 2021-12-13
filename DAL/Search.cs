@@ -89,7 +89,7 @@ namespace DAL
             float locy = search.Locy;
             float dist = search.Dist;
 
-            string strsql = "select * from t_feature where locx between " + (locx - dist) + " and " + (locx + dist) + " and locy between " + (locy - dist) + " and " + (locy + dist) + " and tag='"+ search.Tag +"'";
+            string strsql = "select * from t_feature where locx between " + (locx - dist*0.01141) + " and " + (locx + dist*0.01141) + " and locy between " + (locy - dist* 0.00899) + " and " + (locy + dist*0.00899) + " and tag='"+ search.Tag +"'";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             return DAL.Feature.dotoList(dt);
         }

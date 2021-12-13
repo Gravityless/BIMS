@@ -33,4 +33,10 @@ public partial class detailView : System.Web.UI.Page
     {
         JH.JsHelper.Redirect("/s_result.aspx?mode=4&title=" + this.title.Text + "&dist=" + this.dist.Text + "&tag=" + this.searchTag.Text + "");
     }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        string fid = Request.QueryString["fid"];
+        JH.JsHelper.Redirect("/user/reporting.aspx?fid=" + fid + "&feedBack=" + this.feedBack.Text + "");
+    }
 }

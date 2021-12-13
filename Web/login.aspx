@@ -4,12 +4,13 @@
 <%@ Register Src="~/inc/pageTail.ascx" TagPrefix="uc1" TagName="pageTail" %>
 
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -19,22 +20,32 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
             <uc1:pageHead runat="server" ID="pageHead" />
         </div>
         <div>
-            <table align="center" class="auto-style1">
-                <tr><td>账号</td><td>
-                    <asp:TextBox ID="username" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-                    </td></tr>
-                <tr><td>密码</td><td>
-                    <asp:TextBox ID="password" runat="server" OnTextChanged="password_TextChanged" TextMode="Password"></asp:TextBox>
-                    </td></tr>
-                <tr><td>&nbsp;</td><td>
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登 录" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <table align="center" style="width: 230px;" class="auto-style1">
+                <tr>
+                    <td style="width: 100px">账号</td>
+                    <td>
+                        <asp:TextBox ID="username" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td>
+                        <asp:TextBox ID="password" runat="server" OnTextChanged="password_TextChanged" TextMode="Password"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登 录" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="Button2" runat="server" Text="注 册" OnClick="Button2_Click" />
-                    </td></tr>
+                    </td>
+                </tr>
             </table>
         </div>
         <div>
