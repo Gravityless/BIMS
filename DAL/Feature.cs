@@ -57,14 +57,14 @@ namespace DAL
 
         public static List<Model.Feature> ListbyTag(string tag)
         {
-            string strsql = "select * from t_feature where tag='"+ tag +"'";
+            string strsql = "select * from t_feature where tag='"+ tag + "' ORDER BY title ASC";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             return dotoList(dt);
         }
 
         public static Model.Feature GetFeature(int fid)
         {
-            string strsql = "select * from t_feature where fid=" + fid + "";
+            string strsql = "select * from t_feature where fid=" + fid + " ORDER BY title ASC";
 
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             List<Model.Feature> list = dotoList(dt);
@@ -105,7 +105,7 @@ namespace DAL
         {
             Model.Feature feature = new Model.Feature();
 
-            string strsql = "select * from t_feature where title='" + title + "'";
+            string strsql = "select * from t_feature where title='" + title + "'ORDER BY title ASC";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
 
             if (dt.Rows.Count != 0)

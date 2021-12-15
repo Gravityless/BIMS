@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     <script src="/js/jQuery-3.6.0.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <title></title>
+    <title>用户注册</title>
     <style type="text/css">
         .auto-style1 {
             width: 166px;

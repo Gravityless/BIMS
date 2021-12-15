@@ -42,7 +42,7 @@ namespace DAL
 
         public static List<Model.Report> list()
         {
-            string strsql = "select * from t_report";
+            string strsql = "select * from t_report ORDER BY date DESC";
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             return dotoList(dt);
         }
@@ -70,7 +70,7 @@ namespace DAL
 
         public static List<Model.Report> GetReport(int uid)
         {
-            string strsql = "select * from t_report where uid=" + uid + "";
+            string strsql = "select * from t_report where uid=" + uid + " ORDER BY date DESC";
 
             DataTable dt = MSH.MsSqlHelper.Query(strsql).Tables[0];
             List<Model.Report> list = dotoList(dt);

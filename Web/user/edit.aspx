@@ -11,7 +11,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
-    <title></title>
+    <title>编辑个人信息</title>
 </head>
 <body>
     <form id="form1" runat="server">

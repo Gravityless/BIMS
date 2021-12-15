@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     
-    <title></title>
+    <title>用户登录</title>
     <style type="text/css">
         .auto-style1 {
             width: 218px;

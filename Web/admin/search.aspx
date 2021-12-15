@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     <script src="/js/jQuery-3.6.0.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <title></title>
+    <title>要素查询</title>
     <style type="text/css">
         .auto-style1 {
             width: 213px;

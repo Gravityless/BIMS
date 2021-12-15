@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     <script src="/js/jQuery-3.6.0.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <title>泸州市建筑信息</title>
+    <title>泸州在线</title>
 </head>
 <body>
     <form id="form1" runat="server">

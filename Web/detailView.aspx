@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
 
-    <title>要素详情页</title>
+    <title>要素详情</title>
     <style type="text/css">
         .auto-style2 {
             height: 20px;

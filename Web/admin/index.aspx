@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
     <script src="/js/jQuery-3.6.0.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <title>建筑信息后台管理</title>
+    <title>系统后台</title>
     <style type="text/css">
         .auto-style1 {
             width: 780px;
@@ -22,7 +22,7 @@
         }
     </style>
 </head>
-<body>
+<body/>
     <form id="form1" runat="server">
         <div>
             <div style="width: 1000px; margin: 0 auto">
